@@ -6,7 +6,7 @@ This project is a python based site based around data from the Fantasy Football 
 The user will be required to register for the site using their email and password. After their credentials are saved they will directed to login using their email and password. If their user name is stored in the session they will be directed to /list which is a table containing the top 50 fantasy football players by ADP or Average Draft Position. If the user clicks on each individual Player_name they will be directed to the personal site of that player containing all relevant information from the Players table. The user can click on the link "View my roster" and enter in the individual players on his roster by Name and Postition. 
 
 How to run:
-Clone repository
+Clone repository<br>
 Create virtual environment(not required)
 install dependencies from requirements.txt
 run app.py with python3 version
