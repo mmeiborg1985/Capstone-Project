@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+PPR Rankings
+{% endblock %}
+{% block content %}
+<style>
+  body {
+    text-align: center;
+    background-color: darkcyan;
+}
+form {
+    display: inline-block;
+    background-color: #3d49ce;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 500px;
+}
+
+  table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        
+      }
+    
+</style>
+</head>
+<body>
+  <h1>Create New Player</h1>
+  <div class="container">
+  <form method="POST">
+    <p>Player_id:   <input name="player_id"></p>
+    <p>Name:     <input name="name"></p>
+    <p>Position:  <input name="position"></p>
+    <p>Team:   <input name="team"></p>
+    <p>ADP:   <input name="adp"></p>
+    <p>High:   <input name="high"></p>
+    <p>Low:   <input name="low"></p>
+    <p>Stdev:   <input name="stdev"></p>
+    <p>Bye:   <input name="bye"></p>
+
+
+    <button>Save</button>
+  </form>
+  </div>
+
+  <h1>PPR Rankings</h1>
+  <table>
+    <tr><th>Name</th> <th>Position</th> <th>Team</th> <th>ADP</th></tr>
+    {% for player in players %}
+    <TR>
+       <TD><a href="/{{ player.player_id }}">{{player.name}}</TD>
+       <TD>{{player.position}}</TD>
+       <TD>{{player.team}}</TD>
+       <TD>{{player.adp}}</TD>
+  
+   </TR>
+   
+    
+    {% endfor %}
+    <button><a href="/roster">View Roster</a></button>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+    integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  
+</body>
+
+{% endblock %}
