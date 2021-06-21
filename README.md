@@ -9,4 +9,5 @@ How to run:
 1. Clone repository
 2. Create virtual environment(not required)
 3. install dependencies from requirements.txt
-4. run app.py with python3 version
+4. seed Players database by running seed.py
+5. run app.py with python3 version
